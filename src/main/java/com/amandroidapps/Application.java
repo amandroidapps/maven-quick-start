@@ -2,6 +2,7 @@ package com.amandroidapps;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Created by Anup on 3/3/2017.
@@ -12,6 +13,13 @@ public class Application {
         Application app = new Application();
         app.doSomething();
         app.greet();
+        int count = app.countWords("I have four words");
+        System.out.println("Total words = "+count);
+    }
+
+    private int countWords(String words){
+        String[] seperateWords = StringUtils.split(words, " ");
+        return (seperateWords==null)?0:seperateWords.length;
     }
 
     private void doSomething(){
